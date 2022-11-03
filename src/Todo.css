@@ -1,0 +1,97 @@
+.Todo {
+  display: flex;
+  margin: 0 -3rem 4px;
+  padding: 1.1rem 3rem;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.Todo-task {
+  position: relative;
+  transition: opacity 0.4s linear;
+  font-size: 1.25em;
+}
+
+.Todo-task.completed {
+  opacity: 0.6;
+}
+
+.Todo-task.completed:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -0.5rem;
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  animation: strikeitem 0.2s ease-out 0s forwards;
+}
+
+@keyframes strikeitem {
+  to {
+    width: calc(100% + 1rem);
+  }
+}
+
+.Todo-buttons {
+  flex-shrink: 0;
+  padding-left: 0.7em;
+}
+
+.Todo-buttons button {
+  border: none;
+  font-size: 1rem;
+  margin: 0.4em;
+  background: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.Todo-edit-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Todo-edit-form label {
+  min-width: 100%;
+  margin-top: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.Todo-edit-form input {
+  flex-grow: 1;
+  border: none;
+  border-radius: 10px;
+  background: #f7f1f1;
+  padding: 0 1.5em;
+  font-size: initial;
+}
+
+.Todo-edit-form input:focus {
+  outline: none;
+}
+
+.Todo-edit-form button {
+  padding: 0 1.3rem;
+  border: none;
+  border-radius: 10px;
+  background: #ffadad;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-left: 5px;
+  cursor: pointer;
+  transition: background 0.2s ease-out;
+}
+
+.Todo-edit-form button:hover {
+  background-color: #ff595e;
+  cursor: pointer;
+}
+.Todo-edit-form input,
+.Todo-edit-form button {
+  height: 3rem;
+}
